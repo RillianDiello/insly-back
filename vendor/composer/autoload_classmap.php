@@ -1651,6 +1651,7 @@ return array(
     'Mockery\\Mock' => $vendorDir . '/mockery/mockery/library/Mockery/Mock.php',
     'Mockery\\MockInterface' => $vendorDir . '/mockery/mockery/library/Mockery/MockInterface.php',
     'Mockery\\ReceivedMethodCalls' => $vendorDir . '/mockery/mockery/library/Mockery/ReceivedMethodCalls.php',
+    'Mockery\\Reflector' => $vendorDir . '/mockery/mockery/library/Mockery/Reflector.php',
     'Mockery\\Undefined' => $vendorDir . '/mockery/mockery/library/Mockery/Undefined.php',
     'Mockery\\VerificationDirector' => $vendorDir . '/mockery/mockery/library/Mockery/VerificationDirector.php',
     'Mockery\\VerificationExpectation' => $vendorDir . '/mockery/mockery/library/Mockery/VerificationExpectation.php',
