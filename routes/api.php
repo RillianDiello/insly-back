@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CalcController;
 use Illuminate\Http\Request;
 
 /*
@@ -17,9 +18,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('calcs', 'CalcController');
 
-Route::get('ok', function(){
-    return ['status' => true];
-});
+Route::post('make-calc', 'CalcController@makeCalc');
 
