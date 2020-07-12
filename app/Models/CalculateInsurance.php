@@ -51,16 +51,25 @@ class CalculateInsurance extends Model
     }
 
     public function setArrayInstalments($numInstalments){
-        $mediumValueBase = $this->getBasePremium()/ $numInstalments;               
-        $mediumValueComission = $this->getComission()/ $numInstalments;
-        $mediumValueTax = $this->getTax()/ $numInstalments;
+        $mediumValueBase = round(($this->getBasePremium()/ $numInstalments),2);               
+        $mediumValueComission = round(($this->getComission()/ $numInstalments),2);
+        $mediumValueTax = round(($this->getTax()/ $numInstalments),2);
 
+      
         for ($i=0; $i < $numInstalments; $i++) {
             $calcInta  = new CalculateIntalment();
-            $calcInta->setBaseIntalmen($mediumValueBase);
-            $calcInta->setComission($mediumValueComission);
-            $calcInta->setTaxIntalmen($mediumValueTax);
-            $calcInta->setTotalInstalment();
+            if($i == ($numInstalments -1)){
+                
+                $calcInta->setBaseIntalmen($this->getBasePremium() - ($i * $mediumValueBase));
+                $calcInta->setComission($this->getComission() - ($i * $mediumValueComission));
+                $calcInta->setTaxIntalmen($this->getTax() - ($i * $mediumValueTax));
+                $calcInta->setTotalInstalment();
+            }else{
+                $calcInta->setBaseIntalmen($mediumValueBase);
+                $calcInta->setComission($mediumValueComission);
+                $calcInta->setTaxIntalmen($mediumValueTax);
+                $calcInta->setTotalInstalment();
+            }
             array_push($this->arrayInstalments,$calcInta);           
         }
 
