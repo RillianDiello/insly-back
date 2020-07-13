@@ -56,7 +56,8 @@ class Calc extends Model
 
     public function getTotalsPolicy(){
         return [      
-            'policy' => 'Polcy'          ,      
+            'policy' => 'Policy',
+            'value' => number_format ($this->getValueOfCar() ,2, '.', ''),  
             'base_premium' => number_format($this->calculate->getBasePremium(),2, '.', ''),
             'comission' => number_format($this->calculate->getComission(),2, '.', ''),
             'tax' => number_format($this->calculate->getTax(),2, '.', ''),
@@ -65,7 +66,8 @@ class Calc extends Model
         ];
     }
     public function colValues(){
-        return [        
+        return [
+        'value'  => 'Value',
         'base_premium' => 'Base Premiun (%)',  
         'comission' => 'Commision (%)',
         'tax' => 'Tax (%)',
