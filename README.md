@@ -13,7 +13,7 @@ php artisan serve
 
 
 ### Context
-Api developed using the Laravel framework, with OOP and MVC concepts, where View is in charge of the front application, which accesses the api's methods through routes. The default route when the api server is online is (http: // localhost: 8000 /).
+Api Rest developed using the Laravel framework, with OOP and MVC concepts, where View is in charge of the front application, which accesses the api's methods through routes. The default route when the api server is online is (http: // localhost: 8000 /).
 The following were developed:
 Models:
 
